@@ -76,10 +76,22 @@
     clear: both;
   }
 
+  div.header {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
   footer.branding {
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  div.error {
+    color: #f00;
+    background: lightpink;
+    font-weight: bold
   }
 }
 

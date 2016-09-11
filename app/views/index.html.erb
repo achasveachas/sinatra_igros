@@ -1,10 +1,27 @@
+<h3>Welcome!</h3>
+<p>
+  To get started, think of a number between 1 and 100.
+</p><br>
+
 <form action="/" method="post">
-  <input type="text" name="x3" value="0"><br>
-  <input type="text" name="x5" value="0"><br>
-  <input type="text" name="x7" value="0"><br>
+  <label>Divide your number into 3 using only whole numbers*.<br>How much is the remainder? (if there is no remainder enter 0)</label><br>
+  <input type="text" name="x3" value="0"><br><br>
+  <label>Now divide your number into 5 using only whole numbers*.<br>How much is the remainder?</label><br>
+  <input type="text" name="x5" value="0"><br><br>
+  <label>Now divide your number into 7 using only whole numbers*.<br>How much is the remainder?</label><br>
+  <input type="text" name="x7" value="0"><br><br>
+  <div class="error">
+    <% if flash.has?(:message) %>
+      <%= flash[:message] %><br>
+    <% end %>
+  </div>
   <input type="submit" value="Submit">
 </form>
 <br><br>
-<% if !!@igros %>
+<% if !!@igros && !flash.has?(:message) %>
   <strong>Your number was <%= @igros.result %>.</strong>
 <% end %>
+
+<p>
+  *For example: if your number was 10. Dividing into 3 would leave a remainder of 1,<br>dividing into 5 would leave a remainder of 0, and dividing it into 7 would leave a remainder of 3.
+</p>
