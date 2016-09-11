@@ -8,7 +8,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    erb :'index.html'
+  end
+
+  post "/" do
+    @igros = Igros.new(params[:x3], params[:x5],params[:x7])
+    erb :'index.html'
   end
 
 end
